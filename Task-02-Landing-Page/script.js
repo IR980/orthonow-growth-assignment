@@ -1,15 +1,4 @@
-/**
- * OrthoNow - Consultation Landing Page
- * Features:
- * - Client-side Validation
- * - GTM dataLayer Integration
- * - Loading State
- * - Thank You State
- * - Prevent Duplicate Submission
- * - Production-ready Code Structure
- *
- * Developer: Irshad Alam
- */
+
 
 // Configuration
 
