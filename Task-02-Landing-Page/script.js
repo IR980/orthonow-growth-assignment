@@ -1,7 +1,5 @@
 /**
- * ===========================================================
  * OrthoNow - Consultation Landing Page
- * -----------------------------------------------------------
  * Features:
  * - Client-side Validation
  * - GTM dataLayer Integration
@@ -11,12 +9,9 @@
  * - Production-ready Code Structure
  *
  * Developer: Irshad Alam
- * ===========================================================
  */
 
-// ===========================================================
 // Configuration
-// ===========================================================
 
 const CONFIG = {
   FORM_NAME: "consultation_booking",
@@ -24,9 +19,8 @@ const CONFIG = {
   SUCCESS_DELAY: 1000,
 };
 
-// ===========================================================
 // DOM Elements
-// ===========================================================
+
 
 const form = document.getElementById("consultationForm");
 const thankYouSection = document.getElementById("thankYou");
@@ -36,21 +30,15 @@ const submitButton = document.querySelector(".cta-btn");
 const nameInput = document.getElementById("name");
 const phoneInput = document.getElementById("phone");
 
-// ===========================================================
 // Initialize Google Tag Manager Data Layer
-// ===========================================================
 
 window.dataLayer = window.dataLayer || [];
 
-// ===========================================================
 // Event Listeners
-// ===========================================================
 
 form.addEventListener("submit", handleFormSubmit);
 
-// ===========================================================
 // Main Submit Function
-// ===========================================================
 
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -83,9 +71,7 @@ function handleFormSubmit(event) {
   }
 }
 
-// ===========================================================
 // Form Validation
-// ===========================================================
 
 function validateForm(name, phone) {
   if (name.length < 3) {
@@ -109,9 +95,7 @@ function validateForm(name, phone) {
   return true;
 }
 
-// ===========================================================
 // GTM Event
-// ===========================================================
 
 function pushConsultationEvent() {
   window.dataLayer.push({
@@ -129,9 +113,7 @@ function pushConsultationEvent() {
   });
 }
 
-// ===========================================================
 // Loading State
-// ===========================================================
 
 function setLoadingState(isLoading) {
   submitButton.disabled = isLoading;
@@ -145,25 +127,23 @@ function setLoadingState(isLoading) {
   submitButton.textContent = isLoading ? "Submitting..." : "Book Consultation";
 }
 
-// ===========================================================
 // Success State
-// ===========================================================
 
 function showSuccessState() {
-  form.reset();
 
-  form.style.display = "none";
+    form.reset();
 
-  thankYouSection.hidden = false;
+    form.style.display = "none";
 
-  thankYouSection.scrollIntoView({
-    behavior: "smooth",
-  });
+    thankYou.classList.remove("hidden");
+
+    thankYou.scrollIntoView({
+        behavior: "smooth"
+    });
+
 }
 
-// ===========================================================
 // Utility (For Testing)
-// ===========================================================
 
 function viewDataLayer() {
   console.table(window.dataLayer);

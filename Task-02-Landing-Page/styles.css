@@ -387,7 +387,9 @@ footer {
   text-align: center;
   background: #ecfdf5;
 }
-
+.hidden{
+    display: none !important;
+}
 .thank-you h2 {
   color: var(--success);
   margin-bottom: 15px;
