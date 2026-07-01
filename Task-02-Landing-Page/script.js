@@ -1,78 +1,170 @@
-// ==============================
+/**
+ * ===========================================================
+ * OrthoNow - Consultation Landing Page
+ * -----------------------------------------------------------
+ * Features:
+ * - Client-side Validation
+ * - GTM dataLayer Integration
+ * - Loading State
+ * - Thank You State
+ * - Prevent Duplicate Submission
+ * - Production-ready Code Structure
+ *
+ * Developer: Irshad Alam
+ * ===========================================================
+ */
+
+// ===========================================================
+// Configuration
+// ===========================================================
+
+const CONFIG = {
+  FORM_NAME: "consultation_booking",
+  LEAD_SOURCE: "Google Ads - Consultation Landing Page",
+  SUCCESS_DELAY: 1000,
+};
+
+// ===========================================================
 // DOM Elements
-// ==============================
+// ===========================================================
 
 const form = document.getElementById("consultationForm");
-const thankYou = document.getElementById("thankYou");
-const submitButton = form.querySelector(".cta-btn");
+const thankYouSection = document.getElementById("thankYou");
+
+const submitButton = document.querySelector(".cta-btn");
+
 const nameInput = document.getElementById("name");
 const phoneInput = document.getElementById("phone");
-const name = nameInput.value.trim();
 
-const phone = phoneInput.value.trim();
-// ==============================
-// Initialize dataLayer
-// ==============================
+// ===========================================================
+// Initialize Google Tag Manager Data Layer
+// ===========================================================
 
 window.dataLayer = window.dataLayer || [];
 
-// ==============================
-// Form Submit
-// ==============================
+// ===========================================================
+// Event Listeners
+// ===========================================================
 
 form.addEventListener("submit", handleFormSubmit);
 
-function handleFormSubmit(event){
+// ===========================================================
+// Main Submit Function
+// ===========================================================
 
-    event.preventDefault();
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
 
-    if(name.length < 3){
+  if (!validateForm(name, phone)) {
+    return;
+  }
 
-        alert("Please enter your full name.");
-        return;
+  setLoadingState(true);
 
-    }
+  try {
+    pushConsultationEvent();
 
-    const phoneRegex = /^[6-9]\d{9}$/;
+    console.log("GTM Event Fired Successfully");
 
-    if(!phoneRegex.test(phone)){
+    console.table(window.dataLayer);
 
-        alert("Please enter a valid 10-digit mobile number.");
-        return;
+    setTimeout(() => {
+      showSuccessState();
+    }, CONFIG.SUCCESS_DELAY);
+  } catch (error) {
+    console.error("Submission Error:", error);
 
-    }
+    alert("Something went wrong. Please try again.");
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
+    setLoadingState(false);
+  }
+}
 
-    window.dataLayer.push({
+// ===========================================================
+// Form Validation
+// ===========================================================
 
-        event: "consultation_form_submitted",
+function validateForm(name, phone) {
+  if (name.length < 3) {
+    alert("Please enter your full name.");
 
-        form_name: "consultation_booking",
+    nameInput.focus();
 
-        patient_name: name,
+    return false;
+  }
 
-        phone_number: phone,
+  const phoneRegex = /^[6-9]\d{9}$/;
 
-        lead_source: "Google Ads - Consultation Landing Page",
+  if (!phoneRegex.test(phone)) {
+    alert("Please enter a valid 10-digit mobile number.");
 
-        page_name: document.title,
+    phoneInput.focus();
 
-        submission_time: new Date().toISOString()
+    return false;
+  }
 
-    });
+  return true;
+}
 
-    console.log("dataLayer:", window.dataLayer);
+// ===========================================================
+// GTM Event
+// ===========================================================
 
-    setTimeout(()=>{
+function pushConsultationEvent() {
+  window.dataLayer.push({
+    event: "consultation_form_submitted",
 
-        form.style.display="none";
-        thankYou.hidden=false;
+    form_name: CONFIG.FORM_NAME,
 
-    },1000);
+    lead_source: CONFIG.LEAD_SOURCE,
 
+    page_name: document.title,
+
+    page_url: window.location.href,
+
+    submission_time: new Date().toISOString(),
+  });
+}
+
+// ===========================================================
+// Loading State
+// ===========================================================
+
+function setLoadingState(isLoading) {
+  submitButton.disabled = isLoading;
+
+  nameInput.disabled = isLoading;
+
+  phoneInput.disabled = isLoading;
+
+  submitButton.setAttribute("aria-busy", isLoading);
+
+  submitButton.textContent = isLoading ? "Submitting..." : "Book Consultation";
+}
+
+// ===========================================================
+// Success State
+// ===========================================================
+
+function showSuccessState() {
+  form.reset();
+
+  form.style.display = "none";
+
+  thankYouSection.hidden = false;
+
+  thankYouSection.scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+// ===========================================================
+// Utility (For Testing)
+// ===========================================================
+
+function viewDataLayer() {
+  console.table(window.dataLayer);
 }

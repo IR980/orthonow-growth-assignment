@@ -1,232 +1,288 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta name="description" content="Book an expert orthopaedic consultation at OrthoNow." />
-
+    <meta
+      name="description"
+      content="Book an expert orthopaedic consultation at OrthoNow. Trusted specialists across 9 clinics."
+    />
     <meta name="theme-color" content="#0F62FE" />
 
     <title>OrthoNow | Expert Orthopaedic Consultation</title>
 
+    <link rel="icon" href="../assets/favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ========================================= -->
     <!-- Header -->
     <!-- ========================================= -->
 
     <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h2>OrthoNow</h2>
-            </div>
-
-            <a href="tel:+919999999999" class="call-btn"> Call Now </a>
+      <div class="container">
+        <div class="logo">
+          <h2>OrthoNow</h2>
         </div>
+
+        <a href="tel:+919999999999" class="call-btn" aria-label="Call OrthoNow">
+          Call Now
+        </a>
+      </div>
     </header>
 
     <!-- ========================================= -->
-    <!-- Main -->
+    <!-- Main Content -->
     <!-- ========================================= -->
 
     <main>
-        <!-- Hero Section -->
+      <!-- ========================================= -->
+      <!-- Hero Section -->
+      <!-- ========================================= -->
 
-        <section class="hero">
-            <div class="container">
-                <span class="rating"> ⭐ 4.8 Google Rating </span>
+      <section id="hero" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <span class="rating"> ⭐ 4.8 Google Rating </span>
 
-                <h1>Get Expert Orthopaedic Care for Knee & Back Pain</h1>
+            <h1>Get Expert Orthopaedic Care for Knee & Back Pain</h1>
 
-                <p class="subtitle">
-                    Consult experienced orthopaedic specialists for knee and back pain.
+            <p class="subtitle">
+              Consult experienced orthopaedic specialists for knee and back
+              pain. Book your consultation in under a minute and get connected
+              with the nearest OrthoNow clinic.
+            </p>
 
-                    Book your consultation in under a minute and get connected with the nearest OrthoNow clinic.
-                </p>
-            </div>
-        </section>
+            <a href="#consultationForm" class="hero-btn"> Book Appointment </a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Trust Section -->
+      <!-- ========================================= -->
+      <!-- Trust Section -->
+      <!-- ========================================= -->
 
-        <section class="trust">
-            <div class="container trust-grid">
-                <div class="trust-card">
+      <section id="trust" class="trust">
+        <div class="container trust-grid">
+          <div class="trust-card">
+            <h3>🏥 9 Clinics</h3>
+            <p>Bengaluru, Hyderabad & Chennai</p>
+          </div>
 
-                    <h3>🏥 9 Clinics</h3>
+          <div class="trust-card">
+            <h3>👨‍⚕️ 18,000+</h3>
+            <p>Happy Patients</p>
+          </div>
 
-                    <p>
+          <div class="trust-card">
+            <h3>⭐ 4.8 Rating</h3>
+            <p>Trusted Google Reviews</p>
+          </div>
 
-                        Across Bengaluru, Hyderabad & Chennai
+          <div class="trust-card">
+            <h3>📅 Same-Day</h3>
+            <p>Appointments Available</p>
+          </div>
+        </div>
+      </section>
 
-                    </p>
+      <!-- ========================================= -->
+      <!-- Consultation Form -->
+      <!-- ========================================= -->
 
-                </div>
+      <section id="consultation" class="consultation">
+        <div class="container">
+          <div class="form-card">
+            <h2>Book Your Consultation</h2>
 
-                <div class="trust-card">
-                    <h3>18,000+</h3>
+            <p>
+              Fill in your details and our care team will contact you shortly.
+            </p>
 
-                    <p>Happy Patients</p>
-                </div>
+            <form id="consultationForm" autocomplete="off">
+              <div class="form-group">
+                <label for="name"> Full Name </label>
 
-                <div class="trust-card">
-                    <h3>4.8 ★</h3>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
 
-                    <p>Google Rating</p>
-                </div>
+              <div class="form-group">
+                <label for="phone"> Phone Number </label>
 
-                <div class="trust-card">
-                    <h3>Same Day</h3>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  maxlength="10"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
 
-                    <a href="#consultationForm" class="hero-btn">
+              <button type="submit" class="cta-btn">Book Consultation</button>
 
-                        Book Appointment
+              <p class="privacy-note">
+                🔒 Your information is secure and will only be used to schedule
+                your consultation.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
 
-                    </a>
-                </div>
-            </div>
-        </section>
+      <!-- ========================================= -->
+      <!-- Benefits -->
+      <!-- ========================================= -->
 
-        <!-- Consultation Form -->
+      <section id="benefits" class="benefits">
+        <div class="container">
+          <h2>Why Choose OrthoNow?</h2>
 
-        <section class="consultation">
-            <div class="container">
-                <div class="form-card">
-                    <h2>Book Your Consultation</h2>
+          <div class="benefit-grid">
+            <article class="benefit">
+              <h3>Experienced Specialists</h3>
 
-                    <p>Fill in your details and our team will contact you shortly.</p>
+              <p>
+                Get expert diagnosis and treatment from qualified orthopaedic
+                doctors with years of clinical experience.
+              </p>
+            </article>
 
-                    <form id="consultationForm" autocomplete="off">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
+            <article class="benefit">
+              <h3>Modern Clinics</h3>
 
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-                        </div>
+              <p>
+                Advanced diagnostic facilities and patient-focused care across
+                multiple convenient locations.
+              </p>
+            </article>
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
+            <article class="benefit">
+              <h3>Personalized Treatment</h3>
 
-                            <input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel"
-                                maxlength="10" placeholder="Enter your phone number" required />
-                        </div>
+              <p>
+                Receive treatment plans tailored to your condition, lifestyle,
+                and recovery goals.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-                        <button type="submit" class="cta-btn">Book Consultation</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+      <!-- ========================================= -->
+      <!-- Testimonials -->
+      <!-- ========================================= -->
 
-        <!-- Why Choose OrthoNow -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <h2>What Our Patients Say</h2>
 
-        <section class="benefits">
-            <div class="container">
-                <h2>Why Choose OrthoNow?</h2>
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
 
-                <div class="benefit-grid">
-                    <article class="benefit">
-                        <h3>Experienced Specialists</h3>
+            <blockquote>
+              "Professional doctors, quick appointments and excellent treatment.
+              The consultation process was smooth from start to finish."
+            </blockquote>
 
-                        <p>Consultation with qualified orthopaedic experts.</p>
-                    </article>
+            <span>— Rahul S.</span>
+          </div>
 
-                    <article class="benefit">
-                        <h3>Modern Clinics</h3>
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
 
-                        <p>Advanced diagnostic and treatment facilities.</p>
-                    </article>
+            <blockquote>
+              "My knee pain improved significantly after treatment at OrthoNow.
+              Highly recommended for orthopaedic care."
+            </blockquote>
 
-                    <article class="benefit">
-                        <h3>Personalized Treatment</h3>
+            <span>— Priya K.</span>
+          </div>
+        </div>
+      </section>
 
-                        <p>Care plans designed according to patient needs.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+      <!-- ========================================= -->
+      <!-- FAQ -->
+      <!-- ========================================= -->
 
-        <!-- Testimonials -->
+      <section id="faq" class="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
 
-        <section class="testimonials">
-            <div class="container">
-                <h2>What Our Patients Say</h2>
+          <details>
+            <summary>Do I need a referral?</summary>
 
-                <div class="testimonial">
-                    <p>⭐⭐⭐⭐⭐</p>
+            <p>
+              No. You can directly book an appointment with one of our
+              orthopaedic specialists.
+            </p>
+          </details>
 
-                    <blockquote>
-                        "Professional doctors, quick appointments, and excellent
-                        treatment."
-                    </blockquote>
+          <details>
+            <summary>How soon can I get an appointment?</summary>
 
-                    <span> — Rahul S. </span>
-                </div>
+            <p>
+              Same-day appointments are available at selected clinics, depending
+              on doctor availability.
+            </p>
+          </details>
 
-                <div class="testimonial">
-                    <p>⭐⭐⭐⭐⭐</p>
+          <details>
+            <summary>Which cities do you serve?</summary>
 
-                    <blockquote>
-                        "My knee pain has improved significantly after treatment at
-                        OrthoNow."
-                    </blockquote>
+            <p>
+              We currently serve patients across Bengaluru, Hyderabad, and
+              Chennai.
+            </p>
+          </details>
+        </div>
+      </section>
 
-                    <span> — Priya K. </span>
-                </div>
-            </div>
-        </section>
+      <!-- ========================================= -->
+      <!-- Thank You -->
+      <!-- ========================================= -->
 
-        <!-- FAQ -->
+      <section id="thankYou" class="thank-you" hidden>
+        <div class="container">
+          <h2>Thank You!</h2>
 
-        <section class="faq">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-
-                <details>
-                    <summary>Do I need a referral?</summary>
-
-                    <p>No. You can book a consultation directly.</p>
-                </details>
-
-                <details>
-                    <summary>How soon can I get an appointment?</summary>
-
-                    <p>Same-day appointments are available at selected clinics.</p>
-                </details>
-
-                <details>
-                    <summary>Which cities do you serve?</summary>
-
-                    <p>Bengaluru, Hyderabad, and Chennai.</p>
-                </details>
-            </div>
-        </section>
-
-        <!-- Thank You -->
-
-        <section id="thankYou" class="thank-you" hidden>
-            <div class="container">
-                <h2>Thank You!</h2>
-
-                <p>
-                    Your consultation request has been received. Our team will contact
-                    you shortly.
-                </p>
-            </div>
-        </section>
+          <p>
+            Your consultation request has been received successfully. Our care
+            team will contact you shortly to confirm your appointment.
+          </p>
+        </div>
+      </section>
     </main>
 
+    <!-- ========================================= -->
     <!-- Footer -->
+    <!-- ========================================= -->
 
     <footer>
-        <div class="container">
-            <p>© 2026 OrthoNow. All Rights Reserved.</p>
-        </div>
+      <div class="container">
+        <p>© 2026 OrthoNow Healthcare. All Rights Reserved.</p>
+
+        <p>Serving Bengaluru • Hyderabad • Chennai</p>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <!-- ========================================= -->
+    <!-- Mobile Sticky CTA -->
+    <!-- ========================================= -->
 
+    <div class="mobile-cta">
+      <a href="#consultationForm"> Book Consultation </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
