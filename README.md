@@ -1,150 +1,385 @@
-# OrthoNow Developer Assignment
+# 🏥 OrthoNow Healthcare Landing Page & GTM Tracking
 
-## Developer
-
-**Irshad Alam**
-
----
-
-# Assignment Overview
-
-This repository contains my solution for the **Developer (Client Web + Martech)** assignment provided by **Namoza**.
-
-The assignment demonstrates frontend development, Google Tag Manager implementation, Google Analytics event planning, and CRM integration architecture for a healthcare client.
+> Developer Assignment for **Namoza Private Limited**  
+> Role: **Web Developer & Martech**  
+> Developed by **Irshad Alam**
 
 ---
 
-# Project Scenario
+# 📌 Project Overview
 
-OrthoNow is a chain of orthopaedic clinics operating across Bengaluru, Hyderabad, and Chennai.
+This project is a conversion-focused healthcare landing page developed for **OrthoNow**, a chain of orthopaedic clinics across Bengaluru, Hyderabad, and Chennai.
 
-The objective was to improve lead generation by:
+The assignment demonstrates practical skills in:
 
-* Designing a complete GTM measurement framework.
-* Building a high-converting consultation landing page.
-* Proposing a scalable CRM integration architecture.
+- Frontend Development
+- Conversion Rate Optimization (CRO)
+- Google Tag Manager (GTM)
+- Google Analytics 4 (GA4)
+- Google Ads Conversion Tracking
+- CRM Integration Planning
+- Responsive Web Design
+- Core Web Vitals Optimization
+
+The landing page is designed for users experiencing **knee pain or back pain** and encourages them to book a consultation with OrthoNow specialists.
 
 ---
 
-# Project Structure
+# 🎯 Assignment Objectives
 
-```text
-Task-01-GTM/
-Task-02-Landing-Page/
-Task-03-Integration/
+This submission contains all three required tasks.
+
+## ✅ Task 1
+
+Google Tag Manager Event Architecture
+
+- Complete GTM Event Schema
+- Booking Funnel Tracking
+- dataLayer JSON Events
+- Google Ads Conversion Recommendation
+
+---
+
+## ✅ Task 2
+
+Responsive Landing Page
+
+Developed using
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+Features include
+
+- Hero Section
+- Consultation Form
+- Trust Section
+- Statistics
+- Testimonials
+- FAQ
+- Clinic Locations
+- Google Maps
+- Floating WhatsApp
+- Mobile Sticky CTA
+- Thank You State
+
+---
+
+## ✅ Task 3
+
+Integration Design Documentation
+
+Includes
+
+- HubSpot CRM Integration
+- WhatsApp Business (Karix)
+- Google Ads Conversion Tracking
+- Failure Handling
+- Monitoring Strategy
+
+---
+
+# 🚀 Features
+
+### Landing Page
+
+- Responsive Design
+- Sticky Header
+- Hero Banner
+- Statistics Section
+- Trust Section
+- Consultation Form
+- Doctor Highlights
+- Testimonials
+- FAQ
+- Clinic Locations
+- Google Maps
+- Thank You Page
+- Footer
+- Floating WhatsApp Button
+- Mobile Sticky CTA
+
+---
+
+### Consultation Form
+
+Fields
+
+- Clinic Location
+- Problem / Specialty
+- Full Name
+- Phone Number
+
+Validation
+
+- Required Fields
+- Indian Mobile Validation
+- Name Validation
+
+After submission
+
+- GTM Event Fires
+- Thank You State
+- No Page Reload
+
+---
+
+# 📊 GTM Events Implemented
+
+| Event | Description |
+|---------|------------|
+| consultation_form_submitted | Consultation form submitted |
+| hero_cta_clicked | Hero CTA clicked |
+| mobile_cta_clicked | Mobile sticky CTA clicked |
+| call_now_clicked | Phone button clicked |
+| whatsapp_chat_clicked | WhatsApp button clicked |
+
+---
+
+# 📈 Booking Funnel
+
+### Step 1
+
+Select
+
+- Clinic
+- Problem
+
+↓
+
+### Step 2
+
+Enter
+
+- Name
+- Phone Number
+
+↓
+
+### Step 3
+
+Consultation Form Submitted
+
+↓
+
+Google Ads Conversion
+
+---
+
+# 🧩 Tech Stack
+
+Frontend
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+Analytics
+
+- Google Tag Manager
+- Google Analytics 4
+
+Marketing
+
+- Google Ads
+
+CRM
+
+- HubSpot
+
+Messaging
+
+- Karix WhatsApp Business API
+
+---
+
+# 📂 Project Structure
+
+```
+OrthoNow-Landing-Page/
+
+│
+
+├── index.html
+
+├── styles.css
+
+├── script.js
+
+│
+
+├── assets/
+
+│   ├── doctor.png
+
+│   ├── favicon.ico
+
+│   └── pagespeed-report.png
+
+│
+
+├── task1/
+
+│   ├── gtm-event-schema.md
+
+│   └── booking-funnel-json.md
+
+│
+
+├── task3/
+
+│   └── integration-design.md
+
+│
+
+└── README.md
 ```
 
 ---
 
-# Task 1 – GTM Event Architecture
+# 📋 GTM dataLayer Example
 
-Implemented a complete event tracking strategy including:
+```javascript
+window.dataLayer.push({
 
-* GTM Event Schema
-* Booking Funnel Tracking
-* dataLayer JSON Events
-* GA4 Funnel Mapping
-* Google Ads Conversion Recommendation
+event: "consultation_form_submitted",
 
----
+clinic_location: "Bengaluru - Indiranagar",
 
-# Task 2 – Landing Page
+speciality: "Knee Pain",
 
-Built a responsive healthcare landing page using:
+lead_source: "Google Ads - Consultation Landing Page",
 
-* HTML5
-* CSS3
-* Vanilla JavaScript
+submission_status: "success"
 
-### Features
-
-* Responsive Layout
-* Sticky Header
-* Hero CTA
-* Trust Indicators
-* Consultation Form
-* Client-side Validation
-* GTM dataLayer Integration
-* Thank You State
-* Mobile Friendly
-* Performance Optimized
+});
+```
 
 ---
 
-# Task 3 – Integration Design
+# 📱 Responsive Design
 
-Designed an end-to-end integration architecture covering:
+Optimized for
 
-* HubSpot CRM API
-* Karix WhatsApp Business API
-* Google Tag Manager
-* Google Analytics 4
-* Google Ads Conversion Tracking
-
-Included:
-
-* Phone-based contact lookup
-* CRM update/create workflow
-* WhatsApp confirmation flow
-* Failure handling
-* Retry strategy
-* SLA monitoring
+- Desktop
+- Laptop
+- Tablet
+- Mobile
 
 ---
 
-# Tech Stack
+# ⚡ Performance
 
-* HTML5
-* CSS3
-* Vanilla JavaScript
-* Google Tag Manager
-* Google Analytics 4
-* Google Ads
-* HubSpot CRM
-* Karix WhatsApp API
-* Node.js (Architecture Proposal)
-* Express.js (Architecture Proposal)
+Designed with Core Web Vitals in mind
 
----
+- Lightweight HTML
+- Optimized CSS
+- Vanilla JavaScript
+- Lazy-loaded Google Maps
+- No Frameworks
 
-# Key Features
+Target
 
-* Production-ready folder structure
-* Clean and semantic HTML
-* Mobile-first responsive design
-* GTM-ready dataLayer implementation
-* Google Ads conversion tracking
-* CRM integration architecture
-* Healthcare-focused conversion design
-* PageSpeed optimization
+✅ PageSpeed Mobile Score: 90+
 
 ---
 
-# Repository Contents
+# 📌 Integration Flow
 
-| Folder               | Description                                            |
-| -------------------- | ------------------------------------------------------ |
-| Task-01-GTM          | Event schema, booking funnel and Google Ads conversion |
-| Task-02-Landing-Page | Landing page source code                               |
-| Task-03-Integration  | CRM integration design                                 |
+User
+
+↓
+
+Landing Page
+
+↓
+
+JavaScript Validation
+
+↓
+
+GTM dataLayer Event
+
+↓
+
+Google Tag Manager
+
+↓
+
+GA4
+
+↓
+
+Google Ads Conversion
+
+↓
+
+HubSpot CRM
+
+↓
+
+Karix WhatsApp API
+
+↓
+
+Patient Confirmation Message
 
 ---
 
-# Future Improvements
+# 🎥 Loom Walkthrough
 
-* Live backend integration
-* Appointment scheduling
-* OTP verification
-* Email notifications
-* SMS fallback
-* Admin dashboard
-* Analytics dashboard
-* A/B testing
+The Loom video covers
+
+- GTM Event Schema
+- Booking Funnel
+- Landing Page Demo
+- dataLayer Event
+- Integration Design
+
+Duration
+
+8 Minutes
 
 ---
 
-# Developer
+# 💡 Future Improvements
+
+- Backend API Integration
+- Appointment Scheduling
+- OTP Verification
+- Email Notifications
+- Online Payments
+- Multi-language Support
+- Live Doctor Availability
+- Calendar Booking
+- AI Chat Assistant
+- Real CRM Integration
+
+---
+
+# 👨‍💻 Developer
 
 **Irshad Alam**
 
-Thank you for reviewing my submission.
+B.Tech Computer Science & Engineering (AI & ML)
+
+Noida Institute of Engineering & Technology
+
+### Skills
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Node.js
+- Express.js
+- MongoDB
+- GTM
+- GA4
+
+---
+
+# 📄 License
+
+This project was developed solely for the **Namoza Private Limited Developer Assignment** and is intended for educational and evaluation purposes.
